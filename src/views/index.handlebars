@@ -1,0 +1,25 @@
+<div class="bg-light p-5 rounded-lg m-3">
+  <h1 class="display-4">Bem-Vindo ao Blog</h1>
+  <p class="lead">Tecnologias usadas nesse blog: Node.js, Express, Handlebars, Mongodb</p>
+  <hr class="my-4">
+  <p>Novidades no mundo ta tecnologia.</p>
+  <a class="btn btn-primary btn-lg" href="#" role="button">Crie sua conta!</a>
+</div>
+<hr>
+<h2>Postagens recentes: </h2>
+{{#each postagens}}
+<div class="card mt-4">
+    <div class="card-body ">
+        <h3>Titulo: {{titulo}}</h1>
+        <p>Descricao: {{descricao}}</h4><br>
+        <a href="/postagem/{{slug}}"><button class="btn btn-success">Ler mais</button></a>
+        <hr>
+        <small><strong>Categoria: </strong>{{categoria.nome}}</small><br>
+        <small>Data da publicação: {{data}}</small>
+        
+    </div>
+    
+</div>
+{{else}}
+<h4>Nenhuma postagem recente.</h4>
+{{/each}}
