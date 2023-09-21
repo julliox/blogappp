@@ -23,6 +23,8 @@ const Postagem = mongoose.model("postagem")
 require("./src/models/Categoria")
 const Categoria = mongoose.model("categoria")
 
+const usuarios = require("./src/routes/usuario")
+
 //config
 
     //Sessão
@@ -36,6 +38,8 @@ const Categoria = mongoose.model("categoria")
             app.use((req, res , next) => {
                 res.locals.success_msg = req.flash("success_msg")
                 res.locals.error_msg = req.flash("error_msg")
+                res.locals.error = req.flash("error")
+                res.locals.user = req.user || null
                 next()
             })
     //Tamplate Engine Handlebars
@@ -118,6 +122,7 @@ app.get("/404", (req, res)=>{
 })
 
 app.use('/admin', admin)
+app.use('/usuarios', usuarios)
 
 //outros
 const PORT = 8081
