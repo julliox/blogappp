@@ -9,11 +9,18 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/categorias">Categorias</a>
         </li>
-         <li class="nav-item">
-          <a class="nav-link disabled" aria-disabled="true">Login</a>
-        </li> <li class="nav-item">
-          <a class="nav-link disabled" aria-disabled="true">Resgistro</a>
+        {{#if user}}
+        <li class="nav-item">
+          <a class="nav-link desactive" href="/usuarios/logout" aria-disabled="true">Sair</a>
+        </li> 
+        {{else}}
+        <li class="nav-item">
+          <a class="nav-link active" href="/usuarios/login" aria-current="page">Login</a>
+        </li> 
+        <li class="nav-item">
+          <a class="nav-link active" href="/usuarios/registro" aria-current="page">Resgistro</a>
         </li>
+        {{/if}}
       </ul>
     </div>
   </div>

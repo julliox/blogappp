@@ -19,7 +19,6 @@ const Usuario = new Schema({
         type: String,
         require:true
     }
-
 })
 
 
